@@ -1,5 +1,7 @@
 <?php
 
+$errors = [];
+
 $user = 'root';
 $password = '';
 $database = 'wordpress';
@@ -8,6 +10,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'] ?? '';
     $title = $_POST['title'] ?? '';
     $post = $_POST['post'] ?? '';
+
+    if ($name === '') {
+      $errors[] = 'Bitte geben Sie einen Namen ein.';
+    }
+
+  if (count($errors) === 0) {
+      echo "Alles OK!";
+      $list = array ($name, $email, $phone, $people, $hotel, $program, $shuttle, $note);
+
+      if(file_exists("anmeldungen.csv")){
+          fputcsv($handle, ['Name', 'Email', 'Phone']);
+      }
+      $handle = fopen("daten/anmeldungen.csv", "a");
+      fputcsv($handle, ['Name', 'Email', 'Phone'], ';');
+      fclose($handle);
+      
+  }
 
     $conn = new PDO('mysql:host=localhost;dbname=' . $database, $user, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
