@@ -1,3 +1,16 @@
+<?php
+function connectToDatabase()
+{
+    try {
+        return new PDO('mysql:host=localhost;dbname=guestbook', 'root', '');
+    } catch (PDOException $e) {
+        die('Keine Verbindung zur Datenbank möglich: ' . $e->getMessage());
+    }
+}
+$dbh = connectToDatabase();
+
+$daten = "SELECT "
+?>
 
 <!DOCTYPE html>
 
@@ -13,10 +26,10 @@
         <?php
             include "navigation.php";
         ?>
-        <main>
-            <h2 class="background">Name</h2>
-            <p class="background">Blog Beitrag</p>
-            <p class="background">Kommentar</p>
+        <main class="background">
+            <h2>Name</h2>
+            <p>Blog Beitrag</p>
+            <p>Kommentar</p>
         </main>
     </div>
 </body>

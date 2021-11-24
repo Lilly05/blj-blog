@@ -4,12 +4,17 @@ $user = 'root';
 $password = '';
 $database = 'wordpress';
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 try {
+    $name = $_POST['name'] ?? '';
+    $title = $_POST['title'] ?? '';
+    $post = $_POST['post'] ?? '';
+
     $conn = new PDO('mysql:host=localhost;dbname=' . $database, $user, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "INSERT INTO posts (created_by, post_title, post_text)
-    VALUES ($name, $title, $post)";
+    VALUES ('$name', '$title', '$post')";
     // use exec() because no results are returned
     $conn->exec($sql);
     echo "New record created successfully";
@@ -18,10 +23,7 @@ try {
   }
   
   $conn = null;
-
-$name = $_POST['name'] ?? '';
-$post = $_POST['post'] ?? '';
-
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,9 +39,9 @@ $post = $_POST['post'] ?? '';
     ?>
     <form action="createpost.php" method="POST">
         <label for="name">Name:</label><br>
-        <input type="text" name="name" value="<?= $name ?? '' ?>"><br><br>
+        <input type="text" name="name" value="<?= $name ?? ''?>"><br><br>
         <label for="title">Titel:</label><br>
-        <input type="text" name="titel" value="<?= $title ?? '' ?>"><br><br>
+        <input type="text" name="title" value="<?= $title ?? ''?>"><br><br>
         <label for="post">Blog Beitrag:</label><br>
         <textarea name="post" rows="10" cols="30" value="<?= $post ?? '' ?>"></textarea><br><br>
         <input type="submit" value="Posten">
