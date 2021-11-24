@@ -18,7 +18,6 @@ try {
   }
   
   $conn = null;
-  ?>
 
 $name = $_POST['name'] ?? '';
 $post = $_POST['post'] ?? '';
@@ -27,7 +26,7 @@ $post = $_POST['post'] ?? '';
 
 <!DOCTYPE html>
 <head>
-<link href="../style.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 </head>
 <body>
     <header>

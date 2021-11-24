@@ -11,7 +11,7 @@
             <h1>Lilly's Blog</h1>
         </header>
         <?php
-            include "views/navigation.php";
+            include "navigation.php";
         ?>
         <main>
             <h2 class="background">Name</h2>
