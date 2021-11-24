@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $post = $_POST['post'] ?? '';
 
     $conn = new PDO('mysql:host=localhost;dbname=' . $database, $user, $password);
-    // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = $conn -> prepare("INSERT INTO posts (created_by, post_title, post_text) VALUES (:name, :title, :post)");
     
@@ -31,11 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ?>
     <form action="createpost.php" method="POST">
         <label for="name">Name:</label><br>
-        <input type="text" name="name" value="<?= $name ?? ''?>"><br><br>
+        <input type="text" name="name" value="<?=htmlspecialchars($name ?? '')?>"><br><br>
         <label for="title">Titel:</label><br>
-        <input type="text" name="title" value="<?= $title ?? ''?>"><br><br>
+        <input type="text" name="title" value="<?=htmlspecialchars($title ?? '')?>"><br><br>
         <label for="post">Blog Beitrag:</label><br>
-        <textarea name="post" rows="10" cols="30" value="<?= $post ?? '' ?>"></textarea><br><br>
+        <textarea name="post" rows="10" cols="30" value="<?=htmlspecialchars($post ?? '' )?>"></textarea><br><br>
         <input type="submit" value="Posten">
     </form>
 </body>
