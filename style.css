@@ -43,4 +43,33 @@ form{
 
 .error-box {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+    background-color: rgb(250, 220, 220);
+    border: 1px solid red;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.post{
+    background-color: whitesmoke;
+    margin-right: 450px;
+    margin-left: 250px;
+}
+
+.home{
+    margin-left: 550px;
+}
+
+.time{
+    margin-left: 500px;
+}
+
+.notification{
+    padding-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    color: green;
 }

@@ -2,10 +2,6 @@
 
 $errors = [];
 
-$user = 'root';
-$password = '';
-$database = 'wordpress';
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'] ?? '';
     $title = $_POST['title'] ?? '';
@@ -23,16 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Bitte schreiben Sie ihren Blogbeitrag.';
     }
 
-  if (count($errors) === 0) {
-      echo "Alles OK!";
-      
-  }
-
-    $conn = new PDO('mysql:host=localhost;dbname=' . $database, $user, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = $conn -> prepare("INSERT INTO posts (created_by, post_title, post_text) VALUES (:name, :title, :post)");
+    if (count($errors) === 0) {
+        $conn = new PDO('mysql:host=localhost;dbname=wordpress', 'root', '');
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = $conn -> prepare("INSERT INTO posts (created_by, post_title, post_text) VALUES (:name, :title, :post)");
     
-    $sql->execute([':name' => $name, ':title' => $title, ':post' => $post]);
+        $sql->execute([':name' => $name, ':title' => $title, ':post' => $post]);
+  }
 }
 ?>
 
@@ -42,18 +35,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <header>
-        <h1>Lilly's Blog</h1>
+        <h1>Blog Beitrag erstellen</h1>
     </header>
     <?php
     include "navigation.php";
     ?>
-    <?php if (count($errors) > 0) { ?>
-                <ul >
+    <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                if (count($errors) > 0) { ?>
+                <ul class="error-box">
                     <?php foreach ($errors as $error) { ?>
-                        <li class="error-box"><?= $error ?></li>
+                        <li><?= $error ?></li>
                     <?php } ?>
                 </ul>
-        <?php } ?>
+        <?php }else {
+            ?> <p class="notification"><?php
+            echo "Ihr Beitrag wurde gepostet"; ?>
+            </p> <?php
+        }
+    }?>
     <form action="createpost.php" method="POST">
         <label for="name">Name:</label><br>
         <input type="text" name="name" value="<?=htmlspecialchars($name ?? '')?>"><br><br>
