@@ -15,16 +15,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $errors[] = 'Bitte geben Sie einen Namen ein.';
     }
 
+    if ($title === '') {
+        $errors[] = 'Bitte geben Sie einen Titel ein.';
+    }
+
+    if ($post === '') {
+        $errors[] = 'Bitte schreiben Sie ihren Blogbeitrag.';
+    }
+
   if (count($errors) === 0) {
       echo "Alles OK!";
-      $list = array ($name, $email, $phone, $people, $hotel, $program, $shuttle, $note);
-
-      if(file_exists("anmeldungen.csv")){
-          fputcsv($handle, ['Name', 'Email', 'Phone']);
-      }
-      $handle = fopen("daten/anmeldungen.csv", "a");
-      fputcsv($handle, ['Name', 'Email', 'Phone'], ';');
-      fclose($handle);
       
   }
 
@@ -47,6 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php
     include "navigation.php";
     ?>
+    <?php if (count($errors) > 0) { ?>
+                <ul >
+                    <?php foreach ($errors as $error) { ?>
+                        <li class="error-box"><?= $error ?></li>
+                    <?php } ?>
+                </ul>
+        <?php } ?>
     <form action="createpost.php" method="POST">
         <label for="name">Name:</label><br>
         <input type="text" name="name" value="<?=htmlspecialchars($name ?? '')?>"><br><br>
