@@ -11,6 +11,7 @@ main{
 a{
     color: black;
     text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .background{
@@ -52,12 +53,11 @@ form{
 }
 
 .post{
-    background-color: whitesmoke;
-    margin-right: 450px;
-    margin-left: 250px;
+    padding-left: 525px;
+    border-bottom: white 5px solid;
 }
 
-.home{
+.title{
     margin-left: 550px;
 }
 
@@ -72,4 +72,14 @@ form{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: large;
     color: green;
+}
+
+.otherblogs{
+    background-color: whitesmoke;
+    border: maroon 2px solid;
+    margin-left: 725px;
+}
+
+img {
+    margin-left: 380px;
 }

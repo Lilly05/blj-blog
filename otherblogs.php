@@ -27,9 +27,11 @@ $pdo = new PDO('mysql:host=mysql2.webland.ch;dbname=d041e_dagomez', 'd041e_dagom
     include "navigation.php";
 
     $sql = "SELECT description, url FROM urls ORDER BY description asc";
-    foreach ($pdo->query($sql) as $row) { ?>
-        <a href=<?php $row['url'] ?>><?php $row['description']?></a><br><br>
-    <?php }
+    foreach ($pdo->query($sql) as $row) { 
+    $link = $row['url'];
+    $description = $row['description'];
+        echo "<a href='" . $link . "'class='otherblogs'>". $description . "</a><br><br>";
+        }
     ?>
 
 </body>

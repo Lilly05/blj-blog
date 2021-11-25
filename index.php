@@ -31,15 +31,20 @@ function connectToDatabase()
         <main class="background">
             <?php
             $pdo = new PDO('mysql:host=localhost;dbname=wordpress', 'root', '');
-            $sql = "SELECT created_by, created_at, post_title, post_text FROM posts ORDER BY created_at DESC";
-            foreach ($pdo->query($sql) as $row) { ?>
-            <h2 class="home"> <?php
+            $sql = "SELECT created_by, created_at, post_title, link, post_text FROM posts ORDER BY created_at DESC";
+            foreach ($pdo->query($sql) as $row) { 
+            $link = $row['link'];?>
+
+            <h2 class="title"> <?php
             echo $row['created_by'];?> 
             </h2> <p class="time"> <?php
             echo $row['created_at']."<br>"; ?> 
-            <h3 class="home"> </p><?php
+            <h5 class="title"> </p><?php
             echo $row['post_title']."<br>"; ?>
-            </h3> <p class= "post"> <?php
+            </h5><?php
+            echo "<img src='" . $link . "' . width='400px'><br>";
+            ?></p>
+            <p class= "post"> <?php
             echo $row['post_text']."<br>"; ?>
             </p> <?php
             }
