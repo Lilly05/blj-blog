@@ -1,17 +1,17 @@
 <?php
 
-function connectToDatabase()
-{
-    try {
-        return new PDO('mysql:localhost;dbname=blog', 'root', '',[
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES uft8',
-        ]);
+$pdo = new PDO('mysql:host=localhost;dbname=blog', 'root', '');
+$sql = "SELECT created_by, created_at, post_title, link, post_text, comments FROM posts ORDER BY created_at DESC";
 
-    } catch (PDOException $e) {
-        die('Keine Verbindung zur Datenbank möglich: ' . $e->getMessage());
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $comment = $_POST['comment'] ?? '';
+    $comment = htmlspecialchars($comment);
+
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql2 = $pdo -> prepare("INSERT INTO posts (comments) VALUES (:comment)");
+
+    $sql2->execute([':comment' => $comment]);
     }
-}
 ?>
 
 <!DOCTYPE html>
@@ -30,8 +30,6 @@ function connectToDatabase()
         ?>
         <main class="background">
             <?php
-            $pdo = new PDO('mysql:host=localhost;dbname=blog', 'root', '');
-            $sql = "SELECT created_by, created_at, post_title, link, post_text FROM posts ORDER BY created_at DESC";
             foreach ($pdo->query($sql) as $row) { 
             $link = $row['link'];?>
 
