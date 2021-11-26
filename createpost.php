@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Bitte schreiben Sie ihren Blogbeitrag.';
     }
 
-    if (filter_var($link, FILTER_VALIDATE_URL) === FALSE && $link !== ' ') {
+    if (filter_var($link, FILTER_VALIDATE_URL) === FALSE && $link !== '') {
         $errors[] = 'Bitte geben Sie einen gültigen Link ein';
     }
 
