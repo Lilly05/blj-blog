@@ -42,11 +42,19 @@ function connectToDatabase()
             <h5 class="title"> </p><?php
             echo $row['post_title']."<br>"; ?>
             </h5><?php
-            echo "<img src='" . $link . "' . width='400px' class='image'><br>";
+            echo "<img src='" . $link . "' . class='image'><br>";
             ?></p>
             <p class= "post"> <?php
             echo $row['post_text']."<br>"; ?>
-            </p> <?php
+            </p> 
+            <form method="POST">
+            <label for="comment">Kommentar:</label><br>
+            <input type="text" name="comment" value="<?=$comment ?? ''?>"><br><br>
+            <div class="border">
+            <input class="comment" type="submit" value="Posten"><br><br>
+            </div>
+            </form>
+            <?php
             }
             ?>
         </main>

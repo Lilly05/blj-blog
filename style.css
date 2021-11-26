@@ -53,8 +53,8 @@ form{
 }
 
 .post{
+    /* border-bottom: white 5px solid; */
     text-align: center;
-    border-bottom: white 5px solid;
 }
 
 .title, .time{
@@ -73,9 +73,20 @@ form{
 .otherblogs{
     background-color: whitesmoke;
     border: maroon 2px solid;
-    margin-left: 725px;
+    margin-left: 47%;
 }
 
 .image {
     margin-left: 25%;
+    width: 400px;
 }
+
+.border{
+    border-bottom: white 5px solid;
+}
+
+@media only screen and (max-width: 1200px) {
+    .image{
+        width: 200px;
+    }
+  }
