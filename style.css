@@ -22,13 +22,13 @@ a{
 
 #container{
     display: grid;
-    grid-template-columns: 200px auto;
+    grid-template-columns: 25% 50% 25%;
     grid-template-rows: 100px auto;
 }
 
 header{
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 4;
     border-bottom: 4px black solid;
 }
 
@@ -76,7 +76,6 @@ form{
     margin-left: 725px;
 }
 
-img {
-    margin-left: 500px;
+.image {
+    margin-left: 25%;
 }
-

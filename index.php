@@ -42,7 +42,7 @@ function connectToDatabase()
             <h5 class="title"> </p><?php
             echo $row['post_title']."<br>"; ?>
             </h5><?php
-            echo "<img src='" . $link . "' . width='400px'><br>";
+            echo "<img src='" . $link . "' . width='400px' class='image'><br>";
             ?></p>
             <p class= "post"> <?php
             echo $row['post_text']."<br>"; ?>
