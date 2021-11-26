@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (count($errors) === 0) {
-        $conn = new PDO('mysql:host=localhost;dbname=wordpress', 'root', '');
+        $conn = new PDO('mysql:host=localhost;dbname=blog', 'root', '');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = $conn -> prepare("INSERT INTO posts (created_by, post_title, link, post_text) VALUES (:name, :title, :link, :post)");
     

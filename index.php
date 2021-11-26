@@ -3,7 +3,7 @@
 function connectToDatabase()
 {
     try {
-        return new PDO('mysql:localhost;dbname=wordpress', 'root', '',[
+        return new PDO('mysql:localhost;dbname=blog', 'root', '',[
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES uft8',
         ]);
@@ -30,7 +30,7 @@ function connectToDatabase()
         ?>
         <main class="background">
             <?php
-            $pdo = new PDO('mysql:host=localhost;dbname=wordpress', 'root', '');
+            $pdo = new PDO('mysql:host=localhost;dbname=blog', 'root', '');
             $sql = "SELECT created_by, created_at, post_title, link, post_text FROM posts ORDER BY created_at DESC";
             foreach ($pdo->query($sql) as $row) { 
             $link = $row['link'];?>
