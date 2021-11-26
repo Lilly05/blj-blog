@@ -53,16 +53,12 @@ form{
 }
 
 .post{
-    padding-left: 525px;
+    text-align: center;
     border-bottom: white 5px solid;
 }
 
-.title{
-    margin-left: 550px;
-}
-
-.time{
-    margin-left: 500px;
+.title, .time{
+    text-align: center;
 }
 
 .notification{
@@ -81,6 +77,6 @@ form{
 }
 
 img {
-    margin-left: 380px;
+    margin-left: 500px;
 }
 
