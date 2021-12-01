@@ -52,14 +52,36 @@ form{
     padding-bottom: 10px;
 }
 
+.post-box {
+    border-bottom: white 20px solid;
+    
+}
+
+.add-comment-box {
+    background-color: whitesmoke;
+    margin:0;
+    padding-top: 20px;
+}
+
 .post{
-    /* border-bottom: white 5px solid; */
+    text-align: center;
+
+}
+
+.comments-box {
+    text-align: center;
+    padding-bottom: 20px;
+    background-color: whitesmoke;
+    margin:0;
+}
+.title, .time {
     text-align: center;
 }
 
-.title, .time{
-    text-align: center;
+.comment{
+    padding-bottom: 10px;
 }
+
 
 .notification{
     padding-bottom: 10px;
@@ -77,7 +99,7 @@ form{
 }
 
 .image {
-    margin-left: 25%;
+  
     width: 400px;
 }
 
