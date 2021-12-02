@@ -8,7 +8,56 @@ include "../model/model_otherblogs.php";
 </head>
 <body>
     <header>
-            <h1>Andere Blogs</h1>
+            <ul>
+                <li>
+                    <input type="checkbox" />
+                    <div class="animation">A</div>
+                </li>
+                <li>
+                    <input type="checkbox" />
+                    <div class="animation">N</div>
+                </li>
+                <li>
+                    <input type="checkbox" />
+                    <div class="animation">D</div>
+                </li>
+                <li>
+                    <input type="checkbox" />
+                    <div class="animation">E</div>
+                </li>
+                <li>
+                    <input type="checkbox" />
+                    <div class="animation">R</div>
+                </li>
+                <li>
+                    <input type="checkbox" />
+                    <div class="animation">E</div>
+                </li>
+                <li>
+                    <input type="checkbox" />
+                    <div class="space"></div>
+                </li>
+                <li>
+                    <input type="checkbox" />
+                    <div class="animation">B</div>
+                </li>
+                <li>
+                    <input type="checkbox" />
+                    <div class="animation">L</div>
+                </li>
+                <li>
+                    <input type="checkbox" />
+                    <div class="animation">O</div>
+                </li>
+                <li>
+                    <input type="checkbox" />
+                    <div class="animation">G</div>
+                </li>
+                <li>
+                    <input type="checkbox" />
+                    <div class="animation">S</div>
+                </li>
+        </ul>
     </header>
     <?php
     include "../navigation.php";

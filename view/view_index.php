@@ -20,7 +20,52 @@ include "../model/model_index.php";
 </script>
     <div id="container">
         <header>
-            <h1>Lilly's Blog</h1>
+        <ul>
+        <li>
+            <input type="checkbox" />
+            <div class="animation">L</div>
+        </li>
+        <li>
+            <input type="checkbox" />
+            <div class="animation">I</div>
+        </li>
+        <li>
+            <input type="checkbox" />
+            <div class="animation">L</div>
+        </li>
+        <li>
+            <input type="checkbox" />
+            <div class="animation">L</div>
+        </li>
+        <li>
+            <input type="checkbox" />
+            <div class="animation">Y</div>
+        </li>
+        <li>
+            <input type="checkbox" />
+            <div class="animation">S</div>
+        </li>
+        <li>
+            <input type="checkbox" />
+            <div class="space"></div>
+        </li>
+        <li>
+            <input type="checkbox" />
+            <div class="animation">B</div>
+        </li>
+        <li>
+            <input type="checkbox" />
+            <div class="animation">L</div>
+        </li>
+        <li>
+            <input type="checkbox" />
+            <div class="animation">O</div>
+        </li>
+        <li>
+            <input type="checkbox" />
+            <div class="animation">G</div>
+        </li>
+      </ul>
         </header>
         <?php
             include "../navigation.php";
@@ -32,9 +77,11 @@ include "../model/model_index.php";
                 ?>
                 <div class="post-box">
                     <div class="post">
+                        <div class="post-information">
                         <h2 class="title"> <?= $post['created_by'] ?></h2> 
                         <p class="time"> <?= $post['created_at'] ?></p>
                         <h5 class="title"> <?= $post['post_title']."<br>" ?></h5>
+                        </div>
                         <p><img src="<?= $link ?>" class="image"></p>
                         <p class= "post"> <?= $post['post_text'] ?></p>
                     </div>

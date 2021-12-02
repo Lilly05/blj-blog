@@ -8,7 +8,62 @@ include "../model/model_createpost.php";
 </head>
 <body>
     <header>
-        <h1>Blog Beitrag erstellen</h1>
+        <div id="container">
+        <header>
+        <ul>
+            <li>
+                <input type="checkbox" />
+                <div class="animation">N</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="animation">E</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="animation">U</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="animation">E</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="animation">R</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="space"></div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="animation">B</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="animation">E</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="animation">I</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="animation">T</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="animation">R</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="animation">A</div>
+            </li>
+            <li>
+                <input type="checkbox" />
+                <div class="animation">G</div>
+            </li>
+      </ul>
     </header>
     <?php
     include "../navigation.php";

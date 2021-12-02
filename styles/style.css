@@ -1,8 +1,4 @@
-h1 {
-    text-align: center;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color: maroon;
-}
+
 
 main{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -15,7 +11,7 @@ a{
 }
 
 .background{
-    background-color: lightgray;
+    background-color:#cce0ff;
     margin-bottom: 0%;
     margin-top: 0%;
 }
@@ -29,7 +25,6 @@ a{
 header{
     grid-column-start: 1;
     grid-column-end: 4;
-    border-bottom: 4px black solid;
 }
 
 nav{
@@ -73,6 +68,7 @@ form{
     padding-bottom: 20px;
     background-color: whitesmoke;
     margin:0;
+    border-bottom: black 5px solid;
 }
 .title, .time {
     text-align: center;
@@ -93,9 +89,15 @@ form{
 }
 
 .otherblogs{
+    display: flex;
     background-color: whitesmoke;
-    border: maroon 2px solid;
-    margin-left: 47%;
+    border: #cce0ff 3px solid;
+    position: relative;
+    justify-content: center;
+    border-radius: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+
 }
 
 .image {
@@ -107,6 +109,76 @@ form{
     border-bottom: white 5px solid;
 }
 
+ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-bottom: black 5px solid;
+}
+li {
+    list-style: none;
+  }
+
+  label {
+    position: relative;
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 80px;
+    width: 80px;
+    z-index: 100;
+  }
+
+  .space{
+      margin-right: 50px;
+      background-color: white;
+      color: white;
+  }
+
+  .animation{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    height: 60px;
+    width: 60px;
+    background: black;
+    color:lavender;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 46px;
+    cursor: pointer;
+    margin: 0 4px;
+    border-radius: 50px;
+    box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.05),
+      4px 4px 6px rgba(0, 0, 0, 0.2),
+      inset -1px -1px 4px rgba(255, 255, 255, 0.05),
+      inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  input[type="checkbox"]:checked ~ div {
+    box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
+      inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 15px yellow, 0 0 25px yellow;
+    animation: glow 1.5s linear infinite;
+  }
+
+  @keyframes glow {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+
+  .post-information{
+      background-color: white;
+      margin-top: -20px;
+  }
 @media only screen and (max-width: 1200px) {
     .image{
         width: 200px;
