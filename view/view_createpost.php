@@ -88,7 +88,7 @@ include "../model/model_createpost.php";
         <label for="title">Titel:</label><br>
         <input type="text" name="title" value="<?=$title ?? ''?>"><br><br>
 
-        <label for="link"></label>Bildlink:<br>
+        <label for="link">Bildlink:</label><br>
         <input type="text" name="link" value="<?=$link ?? ''?>"><br><br>
 
         <label for="post">Blog Beitrag:</label><br>

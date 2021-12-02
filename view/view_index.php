@@ -9,6 +9,7 @@ include "../model/model_index.php";
 </head>
 
 <body>
+
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
     var scrollpos = localStorage.getItem('scrollpos');
@@ -71,6 +72,12 @@ include "../model/model_index.php";
             include "../navigation.php";
         ?>
         <main class="background">
+
+        <div class="notification-container" id="notification-container">
+        <div class="notification notification-info">
+            <strong>Info:</strong> Auf diesem Blog gibt es ein Easteregg. Have fun searching :)
+        </div>
+        </div>
             <?php
             foreach ($pdo->query($sql) as $post) { 
                 $link = $post['link'];
@@ -88,7 +95,7 @@ include "../model/model_index.php";
                     <div class="comments-box">
                         <div class="add-comment-box">
                             <form method="POST">
-                                <label for="comment_block">Neuer Kommentar:</label><br><br>
+                                <label class="label" for="comment_block">Neuer Kommentar:</label><br><br>
                                 <input type="text" name="comment_block"?><br><br>
                                 <input type="submit" value="Posten"><br><br>
                                 <input type="hidden" name="comment-id" value="<?=$post['blog_id']?>">
