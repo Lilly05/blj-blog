@@ -60,7 +60,7 @@ include "../model/model_otherblogs.php";
         </ul>
     </header>
     <?php
-    include "../navigation.php";
+    include "view_navigation.php";
     ?> 
     <main> 
     <?php

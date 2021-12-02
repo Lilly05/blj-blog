@@ -68,7 +68,7 @@ include "../model/model_index.php";
       </ul>
         </header>
         <?php
-            include "../navigation.php";
+            include "view_navigation.php";
         ?>
         <main class="background">
 

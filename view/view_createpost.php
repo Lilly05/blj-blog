@@ -66,7 +66,7 @@ include "../model/model_createpost.php";
       </ul>
     </header>
     <?php
-    include "../navigation.php";
+    include "view_navigation.php";
     ?>
     <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (count($errors) > 0) { ?>
