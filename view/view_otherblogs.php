@@ -66,8 +66,8 @@ include "../model/model_otherblogs.php";
     <?php
     $sql = "SELECT description, url FROM urls ORDER BY description asc";
     foreach ($pdo->query($sql) as $row) { 
-    $link = $row['url'];
-    $description = $row['description'];
+        $link = $row['url'];
+        $description = $row['description'];
         echo "<a href='" . $link . "'class='otherblogs'>". $description . "</a><br><br>";
         }
     ?>
