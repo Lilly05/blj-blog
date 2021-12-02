@@ -83,6 +83,7 @@ form{
 }
 
 .notification{
+    height: 50px;
     padding-bottom: 10px;
     margin-top: 10px;
     text-align: center;
@@ -207,7 +208,7 @@ li {
     right: 15px;
   }
   
-  .notification {
+  .easteregg {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -241,17 +242,15 @@ li {
     }
   }
   
-  .notification strong {
-    font-size: 12px;
-    line-height: 20px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-  
   .notification-info {
     background-color: #99AEAD;
     width: 200px;
     
+  }
+
+  .newpost{
+    grid-column-start: 2;
+    grid-column-end: 3;
   }
 
 @media only screen and (max-width: 1200px) {

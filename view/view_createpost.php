@@ -77,11 +77,11 @@ include "../model/model_createpost.php";
                 </ul>
         <?php }else {
             ?> <p class="notification"><?php
-            echo "Ihr Beitrag wurde gepostet"; ?>
+            echo "Ihr Beitrag wurde gepostet"; ?><br>
             </p> <?php
         }
     }?>
-    <form action="view_createpost.php" method="POST">
+    <form class="newpost" action="view_createpost.php" method="POST">
         <label for="name">Name:</label><br>
         <input type="text" name="name" value="<?=$name ?? ''?>"><br><br>
 
@@ -96,5 +96,6 @@ include "../model/model_createpost.php";
 
         <input type="submit" value="Posten">
     </form>
+    </div>
 </body>
 </html>

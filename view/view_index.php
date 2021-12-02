@@ -9,7 +9,6 @@ include "../model/model_index.php";
 </head>
 
 <body>
-
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
     var scrollpos = localStorage.getItem('scrollpos');
@@ -74,10 +73,11 @@ include "../model/model_index.php";
         <main class="background">
 
         <div class="notification-container" id="notification-container">
-        <div class="notification notification-info">
+        <div class="easteregg notification-info">
             <strong>Info:</strong> Auf diesem Blog gibt es ein Easteregg. Have fun searching :)
         </div>
         </div>
+        
             <?php
             foreach ($pdo->query($sql) as $post) { 
                 $link = $post['link'];
